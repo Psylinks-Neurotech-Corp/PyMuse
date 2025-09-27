@@ -14,15 +14,14 @@ A Python-first interface to the Interaxon Muse Windows SDK (`libmuse`) that lets
 
 | Component | Notes |
 |-----------|-------|
+| Running Prebuild Binary: |
+| Python 3.9+ (x64) | Use the interpreter you plan to run with |
+| |
+| Building Binary |
 | Windows 10/11 x64 | 64-bit only (matches the Muse SDK) |
 | Visual Studio 2019/2022 | Install the *Desktop development with C++* workload |
 | CMake >= 3.20 | Used to configure/build the extension |
-| Python 3.9+ (x64) | Use the interpreter you plan to run with |
 | Muse Windows SDK 8.0.5 | Download from Interaxon (see below) |
-
-## Getting the Muse SDK
-
-The Interaxon SDK is not redistributed in this repository. Visit the Muse developer portal and request access to the SDL (currently `libmuse_windows_8.0.5`). Extract it somewhere on disk (e.g. `C:\SDKs\libmuse_windows_8.0.5`). You will reference that path via `-DMUSE_SDK_ROOT=<path>` when building.
 
 ## Using the prebuilt extension (Python 3.12 x64)
 
@@ -36,6 +35,10 @@ build/python/Release/libmuse.dll
 Add `build/python/Release` to `PYTHONPATH`, or copy the `.pyd` and `libmuse.dll` next to your script. Ensure the Muse SDK DLLs remain alongside the wrapper.
 
 If you use a different Python version or want to rebuild against a newer SDK, follow the build steps below.
+
+## Getting the Muse SDK
+
+The Interaxon SDK is not redistributed in this repository. Visit the Muse developer portal and request access to the SDL (currently `libmuse_windows_8.0.5`). Extract it somewhere on disk (e.g. `C:\SDKs\libmuse_windows_8.0.5`). You will reference that path via `-DMUSE_SDK_ROOT=<path>` when building.
 
 ## Building the extension yourself
 
