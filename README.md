@@ -1,6 +1,6 @@
 # Muse Py Wrapper
 
-A Python-first interface to the Interaxon Muse Windows SDK (`libmuse`) that lets you scan for headsets, connect, stream EEG/ACC/Gyro/PPG/Optical/Battery data, and visualize everything with a rich Tk GUI. The bindings are implemented with a `pybind11` C++ extension and ship with batteries included: build scripts, demo apps, and helper tools for research or rapid prototyping.
+A Python-first interface to the Interaxon Muse Windows SDK (`libmuse`) that lets you scan for headsets, connect, stream EEG/ACC/Gyro/PPG/Optical/Battery data, and visualize everything with an example UI. The bindings are implemented with a `pybind11` C++ extension and ship with batteries included: build scripts, demo apps, and helper tools for research or rapid prototyping.
 
 ## Highlights
 
@@ -22,11 +22,11 @@ A Python-first interface to the Interaxon Muse Windows SDK (`libmuse`) that lets
 
 ## Getting the Muse SDK
 
-The Interaxon SDK is not redistributed in this repository. Visit the Muse developer portal, agree to the license, and download `libmuse_windows_8.0.5`. Extract it somewhere on disk (e.g. `C:\SDKs\libmuse_windows_8.0.5`). You will reference that path via `-DMUSE_SDK_ROOT=<path>` when building.
+The Interaxon SDK is not redistributed in this repository. Visit the Muse developer portal and request access to the SDL (currently `libmuse_windows_8.0.5`). Extract it somewhere on disk (e.g. `C:\SDKs\libmuse_windows_8.0.5`). You will reference that path via `-DMUSE_SDK_ROOT=<path>` when building.
 
 ## Using the prebuilt extension (Python 3.12 x64)
 
-If you are running **Python 3.12 (x64)** and simply want to try the examples, a prebuilt binary is included:
+If you are running **Python 3.12 (x64)** and simply want to use the wrapper or try the examples, a prebuilt binary is included:
 
 ```
 build/python/Release/muse_wrapper.cp312-win_amd64.pyd
@@ -43,7 +43,7 @@ If you use a different Python version or want to rebuild against a newer SDK, fo
 # Developer PowerShell for VS (matching your Python architecture)
 cd C:\Users\Prabha\Desktop\PsyLinks Tech\muse_py
 
-$python = "C:\\path\\to\\python.exe"   # e.g. C:\Users\Prabha\miniconda3\python.exe
+$python = "C:\\path\\to\\python.exe"   # e.g. C:\Users\<username>\miniconda3\python.exe
 $libmuse = "C:\\SDKs\\libmuse_windows_8.0.5"
 
 cmake -S . -B build -DMUSE_SDK_ROOT=$libmuse -DPython3_EXECUTABLE=$python
@@ -95,7 +95,7 @@ The demo provides:
 - Device discovery, preset picker, and connection controls
 - Live packet rate monitor and latest values table
 - Per-channel scaling (manual & auto) for EEG/Optics traces
-- Derived metrics: smoothed BPM, HbO/HbR deltas
+- Derived metrics: smoothed BPM, HbO/HbR deltas (Beta Test)
 - Power spectrum view using the FIR low-pass filtered EEG stream
 
 ## Troubleshooting
@@ -103,7 +103,7 @@ The demo provides:
 | Symptom | Fix |
 |---------|-----|
 | `ImportError: No module named 'muse_py'` | Add `build/python/Release` to `PYTHONPATH` or copy the `.pyd` next to your script. |
-| Linker can’t find `libmuse-wrt.lib` | Ensure `-DMUSE_SDK_ROOT` points at the directory containing `include/api` and `lib/release/x64`. |
+| Linker canï¿½t find `libmuse-wrt.lib` | Ensure `-DMUSE_SDK_ROOT` points at the directory containing `include/api` and `lib/release/x64`. |
 | No devices discoverable | Turn on the headset, confirm Bluetooth is enabled, and rerun **Scan**. |
 | Optics traces look flat | Hit **Auto Scale**, then tweak per-channel range (sub-uA options are available). |
 
