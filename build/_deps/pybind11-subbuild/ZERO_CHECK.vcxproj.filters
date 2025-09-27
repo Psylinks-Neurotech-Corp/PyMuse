@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Prabha\Desktop\PsyLinks Tech\muse_py\build\_deps\pybind11-subbuild\CMakeFiles\ff8a8c5b8576b55029bd4e046881da4f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D8202E13-71A1-3A2E-A928-0D331F0C1279}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

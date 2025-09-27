@@ -1,0 +1,10 @@
+^C:\USERS\PRABHA\DESKTOP\PSYLINKS TECH\MUSE_PY\BUILD\_DEPS\PYBIND11-SUBBUILD\CMAKEFILES\FF8A8C5B8576B55029BD4E046881DA4F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/Prabha/Desktop/PsyLinks Tech/muse_py/build/_deps/pybind11-subbuild" "-BC:/Users/Prabha/Desktop/PsyLinks Tech/muse_py/build/_deps/pybind11-subbuild" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Prabha/Desktop/PsyLinks Tech/muse_py/build/_deps/pybind11-subbuild/pybind11-populate.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

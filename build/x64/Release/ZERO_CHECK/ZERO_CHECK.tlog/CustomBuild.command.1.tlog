@@ -1,0 +1,10 @@
+^C:\USERS\PRABHA\DESKTOP\PSYLINKS TECH\MUSE_PY\BUILD\CMAKEFILES\73E0F50AF2278EBC674322BA01D662F3\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/Prabha/Desktop/PsyLinks Tech/muse_py" "-BC:/Users/Prabha/Desktop/PsyLinks Tech/muse_py/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Prabha/Desktop/PsyLinks Tech/muse_py/build/muse_wrapper.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
